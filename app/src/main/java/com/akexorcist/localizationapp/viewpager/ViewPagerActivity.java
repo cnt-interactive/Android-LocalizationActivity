@@ -28,6 +28,7 @@ public class ViewPagerActivity extends LocalizationActivity implements ViewPager
         findViewById(R.id.btn_korea).setOnClickListener(onKoreaLanguageSelected());
         findViewById(R.id.btn_portugal).setOnClickListener(onPortugalLanguageSelected());
         findViewById(R.id.btn_thai).setOnClickListener(onThaiLanguageSelected());
+        findViewById(R.id.btn_turkey).setOnClickListener(onTurkeyLanguageSelected());
 
         btnNext = findViewById(R.id.btn_next);
         btnNext.setOnClickListener(onNextPageClick());
@@ -96,6 +97,10 @@ public class ViewPagerActivity extends LocalizationActivity implements ViewPager
 
     private View.OnClickListener onThaiLanguageSelected() {
         return view -> setLanguage("th");
+    }
+
+    private View.OnClickListener onTurkeyLanguageSelected() {
+        return view -> setLanguage("tr");
     }
 
     private View.OnClickListener onNextPageClick() {

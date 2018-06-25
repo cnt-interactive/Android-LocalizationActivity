@@ -24,6 +24,7 @@ public class Stack2Activity extends LocalizationActivity {
         findViewById(R.id.btn_korea).setOnClickListener(onKoreaLanguageSelected());
         findViewById(R.id.btn_portugal).setOnClickListener(onPortugalLanguageSelected());
         findViewById(R.id.btn_thai).setOnClickListener(onThaiLanguageSelected());
+        findViewById(R.id.btn_turkey).setOnClickListener(onTurkeyLanguageSelected());
     }
 
     private View.OnClickListener onAmericaLanguageSelected() {
@@ -52,5 +53,9 @@ public class Stack2Activity extends LocalizationActivity {
 
     private View.OnClickListener onThaiLanguageSelected() {
         return view -> setLanguage("th");
+    }
+
+    private View.OnClickListener onTurkeyLanguageSelected() {
+        return view -> setLanguage("tr");
     }
 }
