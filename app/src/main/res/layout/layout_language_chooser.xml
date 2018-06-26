@@ -80,5 +80,15 @@
             android:contentDescription="@string/thai"
             android:scaleType="fitCenter"
             android:src="@mipmap/country_thai" />
+
+        <ImageButton
+            android:id="@+id/btn_turkey"
+            android:layout_width="@dimen/btn_language_size"
+            android:layout_height="@dimen/btn_language_size"
+            android:layout_marginEnd="@dimen/padding"
+            android:background="@color/transparent"
+            android:contentDescription="@string/thai"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/country_turkey" />
     </LinearLayout>
 </HorizontalScrollView>

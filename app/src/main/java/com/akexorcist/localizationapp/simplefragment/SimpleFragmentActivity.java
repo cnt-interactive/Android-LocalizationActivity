@@ -26,6 +26,7 @@ public class SimpleFragmentActivity extends LocalizationActivity {
         findViewById(R.id.btn_korea).setOnClickListener(onKoreaLanguageSelected());
         findViewById(R.id.btn_portugal).setOnClickListener(onPortugalLanguageSelected());
         findViewById(R.id.btn_thai).setOnClickListener(onThaiLanguageSelected());
+        findViewById(R.id.btn_turkey).setOnClickListener(onTurkeyLanguageSelected());
 
         svLanguageChooser = findViewById(R.id.sv_language_chooser);
 
@@ -77,5 +78,9 @@ public class SimpleFragmentActivity extends LocalizationActivity {
 
     private View.OnClickListener onThaiLanguageSelected() {
         return view -> setLanguage("th");
+    }
+
+    private View.OnClickListener onTurkeyLanguageSelected() {
+        return view -> setLanguage("tr");
     }
 }
