@@ -19,11 +19,7 @@ public class MainActivity extends LocalizationActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         // You can set default language when first time running. Must to setup before onCreate was called.
-<<<<<<< HEAD
-        setDefaultLanguage("en");
-=======
         setDefaultLanguage(Locale.getDefault());
->>>>>>> develop
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

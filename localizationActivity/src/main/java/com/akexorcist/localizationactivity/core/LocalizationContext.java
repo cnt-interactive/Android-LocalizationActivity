@@ -17,9 +17,13 @@ public class LocalizationContext extends ContextWrapper {
 
     @Override
     public Resources getResources() {
-        Configuration conf = super.getResources().getConfiguration();
-        conf.locale = LanguageSetting.getLanguage(this);
-        DisplayMetrics metrics = super.getResources().getDisplayMetrics();
-        return new Resources(getAssets(), metrics, conf);
+        try {
+            Configuration conf = super.getResources().getConfiguration();
+            conf.locale = LanguageSetting.getLanguage(this);
+            DisplayMetrics metrics = super.getResources().getDisplayMetrics();
+            return new Resources(getAssets(), metrics, conf);
+        } catch (Exception e) {
+            return getResources();
+        }
     }
 }

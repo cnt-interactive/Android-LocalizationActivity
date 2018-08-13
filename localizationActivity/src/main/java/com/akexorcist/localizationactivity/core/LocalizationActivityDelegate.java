@@ -23,15 +23,12 @@ import java.util.Locale;
 
 public class LocalizationActivityDelegate {
     private static final String KEY_ACTIVITY_LOCALE_CHANGED = "activity_locale_changed";
-
-    // Boolean flag to check that activity was recreated from locale changed.
-    private boolean isLocalizationChanged = false;
-
-    // Prepare default language.
-    private Locale currentLanguage = LanguageSetting.getDefaultLanguage();
-
     private final Activity activity;
     private final List<OnLocaleChangedListener> localeChangedListeners = new ArrayList<>();
+    // Boolean flag to check that activity was recreated from locale changed.
+    private boolean isLocalizationChanged = false;
+    // Prepare default language.
+    private Locale currentLanguage = LanguageSetting.getDefaultLanguage();
 
     public LocalizationActivityDelegate(Activity activity) {
         this.activity = activity;
@@ -83,14 +80,7 @@ public class LocalizationActivityDelegate {
     }
 
     public Resources getResources(Resources resources) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
-            Configuration config = resources.getConfiguration();
-            config.locale = LanguageSetting.getLanguage(activity);
-            DisplayMetrics metrics = resources.getDisplayMetrics();
-            return new Resources(activity.getAssets(), metrics, config);
-        } else {
-            return resources;
-        }
+        return resources;
     }
 
     // Provide method to set application language by country name.
